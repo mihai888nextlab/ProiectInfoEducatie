@@ -1,0 +1,139 @@
+.activities {
+  transition: all 0.5s ease-in-out;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .menu {
+    transition: height 0.5s ease-in-out;
+  }
+
+  .menu .title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    svg {
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  &.collapsed {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 100px;
+
+    .menu {
+      width: 66.66%;
+      height: 100px;
+      border-radius: 12px;
+      background-color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+
+      svg {
+        height: 35px;
+        width: 35px;
+        cursor: pointer;
+      }
+
+      h1 {
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      .content {
+        display: none;
+      }
+    }
+  }
+
+  &.full {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 100px;
+    padding-top: 200px;
+    top: 0;
+
+    .menu {
+      width: 66.66%;
+      height: 100%;
+      border-radius: 12px;
+      background-color: white;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+
+      padding: 20px;
+
+      transition: all 0.5s ease-in-out;
+
+      .title {
+        margin-bottom: 50px;
+        svg {
+          height: 35px;
+          width: 35px;
+          cursor: pointer;
+
+          transform: rotate(180deg);
+        }
+
+        h1 {
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+
+      .content {
+        width: 100%;
+        overflow: auto;
+
+        .act {
+          &.active {
+            .title {
+              svg {
+                transform: rotate(180deg);
+              }
+            }
+            .list {
+              display: block;
+              padding: 0 20px;
+              .actlis {
+                border-top: 2px grey solid;
+                h1 {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+
+          border-bottom: 2px solid grey;
+          .title {
+            margin: 10px 0;
+            h1 {
+              font-size: 20px;
+            }
+            svg {
+              transform: rotate(0deg);
+            }
+          }
+
+          .list {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
